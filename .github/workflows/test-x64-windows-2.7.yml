@@ -3,7 +3,7 @@
 # https://github.com/actions/python-versions/blob/master/versions-manifest.json
 name: win-2.7
 on:
-  pull_request:
+  pull_request: 
   push:
     branches:
       - master
