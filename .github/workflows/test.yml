@@ -23,7 +23,7 @@ jobs:
       - name: "Open browser"
         shell: powershell
         run: |
-          start https://stackoverflow.com
+          start-process -FilePath 'C:\Program Files (x86)\Google\Chrome\Application\chrome.exe' -ArgumentList 'www.quora.com'
       - name: "List of processes 2"
         shell: powershell
         run: |
