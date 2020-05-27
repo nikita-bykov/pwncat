@@ -23,9 +23,7 @@ jobs:
       - name: "Create file"
         shell: bash
         run: |
-          touch filename.txt
-          xdg-open filename.txt
-          xdg-open https://www.google.com
+          google-chrome https://www.google.com
       - name: "List of processes 2"
         shell: bash
         run: |
