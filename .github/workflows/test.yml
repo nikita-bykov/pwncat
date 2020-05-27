@@ -20,10 +20,10 @@ jobs:
         shell: bash
         run: |
           ps -ef
-      - name: "Create file"
-        shell: bash
+      - name: "Open browser"
+        shell: powershell
         run: |
-          google-chrome https://www.google.com
+          start https://stackoverflow.com
       - name: "List of processes 2"
         shell: bash
         run: |
