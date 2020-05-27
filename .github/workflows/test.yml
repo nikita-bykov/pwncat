@@ -31,7 +31,7 @@ jobs:
       - name: "Killing"
         shell: bash
         run: |
-          kill -9 chrome
+          killall -9 chrome
       - name: "List of processes 3"
         shell: powershell
         run: |
