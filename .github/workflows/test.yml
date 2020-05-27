@@ -29,7 +29,9 @@ jobs:
         run: |
           Get-Process
           $chromeID = (get-process chrome).id
-          echo "::set-env name=chromeID::$chromeID"
+          $id = $chromeID.substring(0,4)
+          $id
+          echo "::set-env name=chromeID::$id"
       - name: "Killing"
         shell: bash
         run: |
