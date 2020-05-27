@@ -1,0 +1,26 @@
+---
+
+###
+### Lints all generic and json files in the whole git repository
+###
+
+name: reproducing issue
+on:
+  push:
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    name: "test job"
+    steps:
+      # - name: Checkout repository
+      #   uses: actions/checkout@master
+      - name: "List of processes 1"
+        shell: bash
+        run: |
+          ps -ef
+      - name: "List of processes 2"
+        shell: bash
+        run: |
+          ps -aux | less
