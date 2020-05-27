@@ -28,14 +28,10 @@ jobs:
         shell: powershell
         run: |
           Get-Process
-      - name: "kill -l"
-        shell: bash
-        run: |
-          kill -l
       - name: "Killing"
         shell: bash
         run: |
-          kill -9 4284
+          killall -9 chrome
       - name: "List of processes 3"
         shell: powershell
         run: |
