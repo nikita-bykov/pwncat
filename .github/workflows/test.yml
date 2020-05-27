@@ -19,7 +19,7 @@ jobs:
       - name: "List of processes 1"
         shell: bash
         run: |
-          ps -aux
+          ps -ef
       - name: "Create file"
         shell: bash
         run: |
