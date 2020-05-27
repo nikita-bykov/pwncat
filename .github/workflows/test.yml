@@ -35,7 +35,7 @@ jobs:
         shell: bash
         run: |
           echo "Chrome ID = $chromeID" 
-          pkill -9 $chromeID
+          kill -9 $chromeID
       - name: "List of processes 3"
         shell: powershell
         run: |
