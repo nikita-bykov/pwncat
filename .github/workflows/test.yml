@@ -19,8 +19,13 @@ jobs:
       - name: "List of processes 1"
         shell: bash
         run: |
-          ps -ef
+          ps -aux
+      - name: "Create file"
+        shell: bash
+        run: |
+          touch filename
+          open filename
       - name: "List of processes 2"
         shell: bash
         run: |
-          ps -aux | less
+          ps -ef
