@@ -19,11 +19,12 @@ jobs:
       - name: "List of processes 1"
         shell: bash
         run: |
+          ls /usr/bin
           ps 
       - name: "Open browser"
-        shell: powershell
+        shell: bash
         run: |
-          start-process -FilePath 'C:\Program Files (x86)\Google\Chrome\Application\chrome.exe' -ArgumentList 'www.quora.com'
+          google-chrome www.gmail.com
       - name: "List of processes 2"
         shell: powershell
         run: |
