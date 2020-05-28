@@ -17,6 +17,7 @@ jobs:
       - name: "List of processes 1"
         shell: bash
         run: |
+          ls usr/bin
           python -c 'while True: print("1")' &>/dev/null &
           pid=$!
           ps
