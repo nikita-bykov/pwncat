@@ -17,7 +17,7 @@ jobs:
       - name: "List of processes 1"
         shell: bash
         run: |
-          python -c 'while True:' &
+          python -c 'while True: print("1")' &
           ps
       - name: "List of processes 2"
         shell: bash
