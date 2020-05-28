@@ -11,23 +11,27 @@ on:
 jobs:
   build:
     runs-on: windows-latest
+    strategy:
+      fail-fast: False
+      matrix:
+        version:
+          - '2.7'
+          - '3.5'
+          - '3.6'
+          - '3.7'
+          - '3.8'
 
-    name: "test job"
+    name: "[${{ matrix.version }}]"
     steps:
+      - uses: actions/setup-python@v2
+        with:
+          python-version: ${{ matrix.version }}
       - name: "List of processes 1"
         shell: bash
         run: |
+          python --version
           python -c 'while True: print("1")' &>/dev/null &
           pid=$!
           ps
-          sleep 30
           kill -9 $pid
           ps
-      - name: "Killing"
-        shell: bash
-        run: |
-          /c/windows/system32/cmd.exe /c "" tasklist
-      - name: "List of processes 2"
-        shell: cmd
-        run: |
-          tasklist
