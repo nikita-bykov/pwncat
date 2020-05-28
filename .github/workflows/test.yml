@@ -18,13 +18,14 @@ jobs:
         shell: bash
         run: |
           python -c 'while True: print("1")' &>/dev/null &
-          echo $!
+          pid=$!
+          ps
+          kill -9 $pid
           ps
       - name: "Killing"
         shell: bash
         run: |
           ps
-          kill -9 $!
       - name: "List of processes 2"
         shell: bash
         run: |
