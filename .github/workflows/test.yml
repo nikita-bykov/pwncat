@@ -26,17 +26,13 @@ jobs:
         run: |
           google-chrome www.gmail.com
       - name: "List of processes 2"
-        shell: powershell
+        shell: bash
         run: |
-          Get-Process
-          $chromeID = (get-process chrome).id
-          $chromeID
-          echo "::set-env name=chromeID::$chromeID"
+          ps
       - name: "Killing"
         shell: bash
         run: |
-          echo "Chrome ID = $chromeID" 
-          kill -9 $chromeID
+          kill -9 chrome
       - name: "List of processes 3"
         shell: powershell
         run: |
