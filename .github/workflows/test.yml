@@ -19,7 +19,7 @@ jobs:
       - name: "List of processes 1"
         shell: bash
         run: |
-          ls /usr
+          ls /usr/
           ls /usr/bin
           ps 
       - name: "Open browser"
