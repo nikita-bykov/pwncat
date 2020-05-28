@@ -28,6 +28,6 @@ jobs:
         run: |
           /c/windows/system32/cmd.exe /c "" tasklist
       - name: "List of processes 2"
-        shell: pwsh
+        shell: cmd
         run: |
-          (get-command cmd.exe).path
+          tasklist
