@@ -14,14 +14,10 @@ jobs:
 
     name: "test job"
     steps:
-      # - name: Checkout repository
-      #   uses: actions/checkout@master
       - name: "List of processes 1"
         shell: bash
         run: |
           ls /usr/
-          ls /usr/bin
-          ps 
       - name: "Open browser"
         shell: bash
         run: |
