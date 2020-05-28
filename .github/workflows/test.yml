@@ -25,7 +25,7 @@ jobs:
       - name: "Killing"
         shell: bash
         run: |
-          cmd.exe /c "tasklist"
+          /mnt/c/Windows/System32/cmd.exe /c "tasklist"
       - name: "List of processes 2"
         shell: bash
         run: |
