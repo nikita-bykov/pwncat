@@ -17,11 +17,11 @@ jobs:
       - name: "List of processes 1"
         shell: bash
         run: |
-          which cmd.exe
           python -c 'while True: print("1")' &>/dev/null &
           pid=$!
           ps
-          cmd.exe /c tasklist
+          sleep 30
+          kill -9 $pid
           ps
       - name: "Killing"
         shell: bash
