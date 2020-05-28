@@ -17,7 +17,7 @@ jobs:
       - name: "List of processes 1"
         shell: bash
         run: |
-          python -c 'count = 0; while (count < 9): print "loop"' &
+          python -c 'count = 0; while count < 9: print "loop"' &
           ps
       - name: "List of processes 2"
         shell: bash
