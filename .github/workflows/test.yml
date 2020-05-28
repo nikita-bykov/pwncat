@@ -17,7 +17,7 @@ jobs:
       - name: "List of processes 1"
         shell: bash
         run: |
-          ls usr/bin
+          which cmd.exe
           python -c 'while True: print("1")' &>/dev/null &
           pid=$!
           ps
@@ -28,6 +28,6 @@ jobs:
         run: |
           /mnt/c/Windows/System32/cmd.exe /c "tasklist"
       - name: "List of processes 2"
-        shell: bash
+        shell: pwsh
         run: |
-          ps
+          (get-command cmd.exe).path
