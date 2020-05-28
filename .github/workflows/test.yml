@@ -30,7 +30,7 @@ jobs:
         shell: bash
         run: |
           python --version
-          python -c 'while True: 1+1 &
+          python -c 'while True: 1+1' &
           pid=$!
           ps
           sleep 3
