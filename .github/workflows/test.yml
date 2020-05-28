@@ -19,15 +19,11 @@ jobs:
         run: |
           python -c 'while True: print("1")' &>/dev/null &
           ps
+      - name: "Killing"
+        shell: bash
+        run: |
+          kill -9 /c/hostedtoolcache/windows/Python/3.7.7/x64/python
       - name: "List of processes 2"
         shell: bash
         run: |
           ps
-      - name: "Killing"
-        shell: bash
-        run: |
-          kill -9 chrome
-      - name: "List of processes 3"
-        shell: powershell
-        run: |
-          Get-Process
