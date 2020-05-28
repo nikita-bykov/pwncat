@@ -23,7 +23,7 @@ jobs:
         shell: bash
         run: |
           ps
-          kill -9 /c/hostedtoolcache/windows/Python/3.7.7/x64/python
+          kill -9 $!
       - name: "List of processes 2"
         shell: bash
         run: |
