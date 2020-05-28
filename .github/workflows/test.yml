@@ -21,7 +21,7 @@ jobs:
           pid=$!
           ps
           cmd.exe /c tasklist
-          cmd.exe /c "taskkill /PID $pid"
+          taskkill /PID $pid
           ps
       - name: "Killing"
         shell: bash
