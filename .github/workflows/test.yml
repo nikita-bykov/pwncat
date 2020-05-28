@@ -22,6 +22,7 @@ jobs:
       - name: "Killing"
         shell: bash
         run: |
+          ps
           kill -9 /c/hostedtoolcache/windows/Python/3.7.7/x64/python
       - name: "List of processes 2"
         shell: bash
