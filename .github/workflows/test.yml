@@ -30,9 +30,9 @@ jobs:
         shell: bash
         run: |
           python --version
-          python -c 'while True: print("1")' &
+          python -c 'while True: print("1")' & dev/null/&
           pid=$!
           ps
-          sleep 30
+          sleep 3
           kill -9 $pid
           ps
