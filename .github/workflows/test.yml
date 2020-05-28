@@ -20,7 +20,7 @@ jobs:
           python -c 'while True: print("1")' &>/dev/null &
           pid=$!
           ps
-          kill -9 $pid
+          cmd /c "taskkill /PID $pid"
           ps
       - name: "Killing"
         shell: bash
