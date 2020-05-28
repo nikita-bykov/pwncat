@@ -17,11 +17,8 @@ jobs:
       - name: "List of processes 1"
         shell: bash
         run: |
-          ls /usr/share
-      - name: "Open browser"
-        shell: bash
-        run: |
-          google-chrome www.gmail.com
+          python -c 'count = 0; while (count < 9): print "loop"' &
+          ps
       - name: "List of processes 2"
         shell: bash
         run: |
