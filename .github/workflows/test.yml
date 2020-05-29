@@ -11,21 +11,36 @@ on:
 jobs:
   build:
     runs-on: windows-latest
+    strategy:
+      fail-fast: False
+      matrix:
+        version:
+          - '2.7'
+          - '3.5'
+          - '3.6'
+          - '3.7'
+          - '3.8'
 
-    name: "test job"
+    name: "[${{ matrix.version }}]"
     steps:
-      # - name: Checkout repository
-      #   uses: actions/checkout@master
-      - name: "List of processes 1"
+      - uses: actions/setup-python@v2
+        with:
+          python-version: ${{ matrix.version }}
+      - name: Path
+        run: |
+          echo "::add-path::c:\msys64\mingw32\bin"
+          echo "::add-path::c:\msys64\usr\bin"
+      - name: PATH
+        shell: pwsh
+        run: echo "$env:PATH"
+      - name: test
         shell: bash
         run: |
-          ps -ef
-      - name: "Create file"
-        shell: bash
-        run: |
-          touch filename
-          open filename
-      - name: "List of processes 2"
-        shell: bash
-        run: |
-          ps -ef
+          echo "$SHELL"
+          python --version
+          python -c 'while True: 1+1' &
+          pid=$!
+          ps
+          sleep 3
+          kill -9 $pid
+          ps
