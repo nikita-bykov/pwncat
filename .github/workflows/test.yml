@@ -29,6 +29,10 @@ jobs:
       - name: "List of processes 1"
         shell: c:\msys64\usr\bin\bash {0}
         run: |
+          ps
+      - name: "List of processes 1"
+        shell: c:\msys64\usr\bin\bash {0}
+        run: |
           python --version
           python -c 'while True: 1+1' &
           pid=$!
