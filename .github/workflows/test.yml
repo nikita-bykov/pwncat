@@ -27,7 +27,7 @@ jobs:
         with:
           python-version: ${{ matrix.version }}
       - name: "List of processes 1"
-        shell: bash
+        shell: c:\msys64\usr\bin\bash
         run: |
           python --version
           python -c 'while True: 1+1' &
