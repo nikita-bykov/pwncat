@@ -28,12 +28,16 @@ jobs:
           python-version: ${{ matrix.version }}
       - name: Path
         run: |
-          $path = "c:\msys64\usr\bin\bash;$env:PATH"
+          $path = "c:\msys64\mingw32\bin;$env:PATH"
           echo "::set-env name=PATH::$path"
+          $path1 = "c:\msys64\usr\bin;$env:PATH"
+          echo "::set-env name=PATH::$path1"
+      - name: PATH
+        shell: pwsh
+        run:
       - name: test
         shell: bash {0}
         run: |
-          echo "$env:PATH"
           echo "$SHELL"
           python --version
           python -c 'while True: 1+1' &
