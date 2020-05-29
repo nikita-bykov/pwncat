@@ -31,12 +31,13 @@ jobs:
           echo "::add-path::c:\msys64\mingw32\bin"
           echo "::add-path::c:\msys64\usr\bin"
       - name: test
-        run: |
-            python --version
-            python -c 'while True: 1+1' &
-            pid=$!
-            ps
-            sleep 3
-            kill -9 $pid
-            ps
         shell: bash {0}
+        run: |
+          echo "$SHELL"
+          python --version
+          python -c 'while True: 1+1' &
+          pid=$!
+          ps
+          sleep 3
+          kill -9 $pid
+          ps
