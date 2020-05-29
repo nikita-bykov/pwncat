@@ -26,13 +26,17 @@ jobs:
       - uses: actions/setup-python@v2
         with:
           python-version: ${{ matrix.version }}
-      - name: "List of processes 1"
-        shell: c:\msys64\usr\bin\bash {0}
+      - name: Path
         run: |
-          python --version
-          python -c 'while True: 1+1' &
-          pid=$!
-          ps
-          sleep 3
-          kill -9 $pid
-          ps
+          echo "::add-path::c:\msys64\mingw32\bin"
+          echo "::add-path::c:\msys64\usr\bin"
+      - name: test
+        run: |
+            python --version
+            python -c 'while True: 1+1' &
+            pid=$!
+            ps
+            sleep 3
+            kill -9 $pid
+            ps
+        shell: bash {0}
