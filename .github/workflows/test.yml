@@ -36,6 +36,7 @@ jobs:
       - name: test
         shell: bash
         run: |
+          where bash
           echo "$SHELL"
           python --version
           python -c 'while True: 1+1' &
