@@ -1,0 +1,34 @@
+---
+
+###
+### Lints all generic and json files in the whole git repository
+###
+
+name: reproducing issue
+on:
+  push:
+
+jobs:
+  build:
+    runs-on: windows-latest
+    strategy:
+      fail-fast: False
+      matrix:
+        version:
+          - '2.7'
+          - '3.5'
+          - '3.6'
+          - '3.7'
+          - '3.8'
+
+    name: "[${{ matrix.version }}]"
+    steps:
+      - uses: actions/setup-python@v2
+        with:
+          python-version: ${{ matrix.version }}
+      -  name: kind
+         run: |
+               ln -s /proc/self/fd /dev/fd
+               echo -n expect > test.txt
+               diff <(printf expect | od -c) <(cat test.txt| od -c)
+         shell: bash
