@@ -30,6 +30,9 @@ jobs:
         run: |
           echo "::add-path::c:\msys64\mingw32\bin"
           echo "::add-path::c:\msys64\usr\bin"
-      - name: PATH
-        shell: bash
-        run: diff <(printf expect | od -c) <(cat file_stdout | od -c)
+      -  name: kind
+         run: |
+               ln -s /proc/self/fd /dev/fd
+               echo -n expect > test.txt
+               diff <(printf expect | od -c) <(cat test.txt| od -c)
+         shell: bash
