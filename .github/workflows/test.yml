@@ -32,16 +32,4 @@ jobs:
           echo "::add-path::c:\msys64\usr\bin"
       - name: PATH
         shell: pwsh
-        run: echo "$env:PATH"
-      - name: test
-        shell: bash
-        run: |
-          where bash
-          echo "$SHELL"
-          python --version
-          python -c 'while True: 1+1' &
-          pid=$!
-          ps
-          sleep 3
-          kill -9 $pid
-          ps
+        run: bash --version
