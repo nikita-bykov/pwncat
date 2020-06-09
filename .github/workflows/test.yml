@@ -31,5 +31,5 @@ jobs:
           echo "::add-path::c:\msys64\mingw32\bin"
           echo "::add-path::c:\msys64\usr\bin"
       - name: PATH
-        shell: pwsh
-        run: bash --version
+        shell: bash
+        run: diff <(printf expect | od -c) <(cat file_stdout | od -c)
